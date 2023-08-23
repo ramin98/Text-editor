@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Редактор текста</title>
+    <style>
+      body {
+        padding: 30px;
+        background-color: #f9fbfd;
+      }
+      #editor {
+        border: 1px solid #ccc;
+        padding: 80px;
+        height: 1000px;
+        width: 700px;
+        margin: auto;
+        background-color: white;
+        margin-top: 20px;
+        outline: none;
+        font-size: large;
+      }
+
+      .toolbar {
+        display: flex;
+        justify-content: space-evenly;
+        background-color: #edf2fa;
+        border-radius: 30px;
+        font-size: 25px;
+      }
+
+      .toolbar button {
+        background-color: transparent;
+        cursor: pointer;
+        border: none;
+        border-radius: 4px;
+        height: 28px;
+        margin: 5px 1px;
+        min-width: 28px;
+        font-size: 15px;
+      }
+
+      .toolbar button:hover {
+        background-color: rgb(216 222 229);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="toolbar">
+      <button style="font-weight: 700" onclick="executeCommand('bold')">
+        B
+      </button>
+      <button
+        style="font-style: italic; font-family: monospace"
+        onclick="executeCommand('italic')"
+      >
+        I
+      </button>
+      <button
+        style="text-decoration: underline"
+        onclick="executeCommand('underline')"
+      >
+        U
+      </button>
+      <button
+        style="text-decoration: line-through"
+        onclick="executeCommand('strikeThrough')"
+      >
+        T
+      </button>
+      <button style="border-bottom: solid red 3px" onclick="changeColor()">
+        A
+      </button>
+      <button onclick="changeFont()">Font</button>
+      <button onclick="changeFontSize()">Font Size</button>
+      <button onclick="insertLink()">Link</button>
+    </div>
+    <div id="editor" contenteditable="true">Начните вводить текст...</div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
